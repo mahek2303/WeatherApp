@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <input type="text" id="city" placeholder="Enter city name">
+        <button id="getWeather">Get Weather</button>
+      <div id="loading" style="display: none;">Loading...</div>
+      <div class="weather-info" id="weather-info" style="display: none;">
+          <div class="location" id="location"></div>
+          <div class="date" id="date"></div>
+          <div class="temp" id="temp"></div>
+          <div class="condition" id="condition"></div>
+          <div class="details">
+
+            <!-- Location -->
+            <img src="icons/location icon.webp" alt="Location Icon" class="icon">
+            <span id="location"><h2>Location:</h2></span>
+
+            <!-- Temperature -->
+            <img src="icons/temperature icon.png" alt="Temperature Icon" class="icon">
+            <span id="temperature">Temperature:</span>
+
+            <!-- Feels like -->
+            <img src="icons/feels like icon.png" alt="Feels like Icon" class="icon">
+            <span id="feelslike">Feels like:</span>
+
+            <!-- Weather -->
+            <img src="icons/weather icon.jpg" alt="Weather Icon" class="icon">
+            <span id="weather">Weather:</span>
+
+            <!-- Humidity -->
+            <img src="icons/humidity icon.png" alt="Humidity Icon" class="icon">
+            <span id="humidity">Humidity:</span>
+            
+            <!-- Wind -->
+            <img src="icons/wind icon.png" alt="Wind Icon" class="icon">
+                  <span id="wind">Wind speed:</span>
+          </div>
+      </div>
+      
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
