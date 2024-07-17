@@ -5,9 +5,15 @@ document.getElementById('getWeather').addEventListener('click', () => {
   getWeather(city);
 });
 
+document.getElementById('city').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const city = document.getElementById('city').value;
+        getWeather(city);
+    }
+});
+
 async function getWeather(city){
   document.getElementById('loading').style.display = 'block';
-  document.getElementById('weather-info').innerHTML = '';
   document.getElementById('weather-info').style.display = 'none';
   
   try{
@@ -34,15 +40,13 @@ async function getWeather(city){
 
 function displayWeather(data) {
 
-  document.getElementById('location').innerText = data.name;
+  document.getElementById('location').innerText = ` ${data.name}, ${data.sys.country}`;
+  document.getElementById('temperature').innerText = `Temperature: ${data.main.temp}°C`;
+  document.getElementById('feelslike').innerText = `Feels like: ${data.main.feels_like}°C`;
+  document.getElementById('weather').innerText = `Weather: ${data.weather[0].description}`;
   
-    const weather = `
-        <h2>${data.name}, ${data.sys.country}</h2>
-        <p>Temperature: ${data.main.temp}°C</p>
-        <p>Feels like: ${data.main.feels_like}°C</p>
-        <p>Weather: ${data.weather[0].description}</p>
-        <p>Humidity: ${data.main.humidity}%</p>
-        <p>Wind Speed: ${data.wind.speed} m/s</p>    
-    `;
-    document.getElementById('weather-info').innerHTML = weather;
+  document.getElementById('humidity').innerText = `Humidity: ${data.main.humidity}%`;
+  document.getElementById('wind').innerText = `Wind speed: ${data.wind.speed} m/s`;
+
+  document.getElementById('weather-info').style.display = 'block';
 }
