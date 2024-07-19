@@ -27,18 +27,19 @@ h1 {
   margin-bottom: 20px;
 }
 
-.search-container #city{
+.search-container #city {
   margin-bottom: 10px;
 }
+
 .search-container {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column;
   align-items: center;
 }
 
 input {
-  width: 80%; 
-  padding: 10px; 
+  width: 80%;
+  padding: 10px;
   border: 2px solid #ccc;
   border-radius: 10px;
 }
@@ -50,7 +51,7 @@ button {
   color: white;
   border-radius: 10px;
   cursor: pointer;
-  width: 50%; 
+  width: 50%;
 }
 
 #loading {
@@ -62,30 +63,38 @@ button {
 
 .weather-info {
   margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
 }
 
-.details .icon {
-  width: 60px;
-  height: 60px;
+.details {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  
 }
 
-.details #weatherIcon{
-  width: 100px;
-  height: 70px;
-}
-
-.details span {
+.details .detail-item {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-#location{
+.icon {
+  width: 40px; 
+  height: 40px; 
+  margin-right: 10px; 
+}
+
+#weatherIcon {
+  width: 90px;
+  height: 80px;
+}
+
+.imageText {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+#location {
   font-weight: bold;
   justify-content: center;
   margin-bottom: 30px;
