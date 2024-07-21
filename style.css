@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f0f0f0;
+  background: #ededed;
   margin: 0;
 }
 
@@ -61,46 +61,71 @@ button {
   color: #1b4b7e;
 }
 
-.weather-info {
-  margin-top: 20px;
-}
-
 .details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
-.details .detail-item {
+.detail-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  width: 100%;
+  max-width: 300px; 
+  margin-bottom: 15px;
+}
+
+.detail-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.detail-item p {
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center; /* Centers text vertically */
+}
+
+.location-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .icon {
-  width: 40px; 
-  height: 40px; 
-  margin-right: 10px; 
+  width: 40px;
+  height: 40px;
 }
 
-#weatherIcon {
-  width: 90px;
+#locationIcon {
+  width: 80px;
   height: 80px;
-}
-
-.imageText {
-  display: flex;
-  align-items: center;
-  margin: 0;
+  align-self: center;
+  margin-top: 5px;
 }
 
 #location {
   font-weight: bold;
-  justify-content: center;
-  margin-bottom: 30px;
 }
 
-#locationImg {
-  display: flex;
-  align-items: center;
+.imageText {
+  margin: 0;
+  text-align: center; /* Center text for location */
+}
+
+
+#weatherIcon {
+  width: 50px;
+  height: 50px;
+}
+
+/* For other detail items, keeps the icon on the left */
+.detail-item:not(.location-item) {
+  flex-direction: row; /* Ensures row alignment for other items */
 }
