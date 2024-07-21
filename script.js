@@ -52,18 +52,30 @@ function displayWeather(data) {
   // Clear any existing messages and display weather info
   weatherInfoElement.innerHTML = `
     <div class="details">
-      <img src="icons/location icon.webp" alt="Location Icon" class="icon">
-      <p id="location" class = "imageText">Location: ${data.name}, ${data.sys.country}</p>
+      <div class="detail-item, location-item">
+        <img src="icons/location icon.webp" alt="Location Icon" class="icon" id="locationIcon">
+      <p id="location" class = "imageText"> ${data.name}, ${data.sys.country}</p>
+      </div>
+      <div class="detail-item">
       <img src="icons/temperature icon.png" alt="Temperature Icon" class="icon">
       <p id="temperature" class = "imageText">Temperature: ${data.main.temp}°C</p>
+      </div>
+      <div class="detail-item">
       <img src="icons/feels like icon.png" alt="Feels like Icon" class="icon">
       <p id="feelslike" class = "imageText">Feels like: ${data.main.feels_like}°C</p>
+      </div>
+      <div class="detail-item">
       <img src="icons/weather icon.jpg" alt="Weather Icon" class="icon" id="weatherIcon">
       <p id="weather" class = "imageText">Weather: ${data.weather[0].description}</p>
+      </div>
+      <div class="detail-item">
       <img src="icons/humidity icon.png" alt="Humidity Icon" class="icon">
       <p id="humidity" class = "imageText">Humidity: ${data.main.humidity}%</p>
+      </div>
+      <div class="detail-item">
       <img src="icons/wind icon.png" alt="Wind Icon" class="icon">
       <p id="wind" class = "imageText">Wind speed: ${data.wind.speed} m/s</p>
+      </div>
     </div>
   `;
   weatherInfoElement.style.display = 'block';
